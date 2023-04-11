@@ -5,8 +5,8 @@
         <div class="col-md-6 col-md-offset-3">
           <div class="topic-index-single">
             <h2 class="topic-author">
-             <% if !topic.user.profile.nil? %>    
-              <%= link_to profiles_path(user_id: topic.user.id) do %>      
+             <% if !profile_nil?(topic.user) %>    
+              <%= link_to profile_path(topic.user.profile) do %>      
                <%= topic.user.name %>
               <% end %> 
              <% else %> 

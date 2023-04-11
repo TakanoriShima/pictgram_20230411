@@ -32,6 +32,17 @@
               <% end %>
             </li>
             <li>
+              <% if !profile_nil?(current_user) %>
+                <%= link_to profile_path(current_user) do %>
+                  <%= image_tag current_user.profile.profile_image.url %>
+                <% end %>
+              <% else %>
+                <%= link_to new_profile_path do %>
+                  <%= image_tag "icons/profile.png" %>
+                <% end %>
+              <% end %>
+            </li>
+            <li>
               <%= link_to logout_path, method: :delete do %>
                 <%= image_tag "icons/logout.png" %>
               <% end %>
